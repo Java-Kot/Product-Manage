@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<topbody th:replace="layout :: topbody"></topbody>
+<ul th:each="row,rowStat : ${products}">
+    <li>
+        <p th:text="${row.getId()}"></p>
+        <p th:text="${row.getProdname()}"></p>
+        <p th:text="${row.getPrice()}"></p>
+        <p th:text="${row.getDescription()}"></p>
+        <p th:text="${row.getVendorx()}"></p>
+    </li>
+</ul>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

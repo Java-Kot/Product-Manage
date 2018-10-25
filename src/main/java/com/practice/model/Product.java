@@ -1,4 +1,4 @@
-package model;
+package com.practice.model;
 
 public class Product {
     private int id;

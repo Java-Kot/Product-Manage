@@ -1,6 +1,6 @@
-package service;
+package com.practice.service;
 
-import model.Product;
+import com.practice.model.Product;
 
 import java.util.ArrayList;
 import java.util.HashMap;
