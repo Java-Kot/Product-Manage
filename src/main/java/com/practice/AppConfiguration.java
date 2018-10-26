@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.TemplateEngine;
@@ -47,9 +48,10 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/resources/css/");
+        super.addResourceHandlers(registry);
     }
 }

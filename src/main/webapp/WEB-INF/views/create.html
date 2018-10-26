@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div class="container">
+    <header th:replace="layout :: header"></header>
+    <style>
+        .formview{
+            width: 39%;
+            margin: 3em auto;
+            border: 1px solid #fefefe;
+            border-radius: 5px;
+            padding: 2em;
+        }
+        label{
+            color: #FFFFFF;
+            margin-top: .3em;
+        }
+        button{
+            margin: 1em;
+        }
+    </style>
+    <section class="banner" role="banner">
+        <div class="formview form-group">
+            <h1>Add product</h1>
+            <form action="#" th:action="@{/save}" th:object="${create}" method="POST" novalidate="novalidate">
+                <input type="hidden" th:field="*{id}"/>
+                <label for="name">Name:</label>
+                <input class="form-control input-lg" id="name" th:field="*{prodname}" />
+                <label for="price">Price:</label>
+                <input class="form-control input-lg" type="number" id="price" th:field="*{price}" />
+                <label for="desc">Description:</label>
+                <input class="form-control input-lg" id="desc" th:field="*{description}" />
+                <label for="vendor">Manufacture:</label>
+                <input class="form-control input-lg" id="vendor" th:field="*{vendorx}" />
+                <button class="btn btn-primary" type="submit">Save</button>
+            </form>
+        </div>
+    </section>
+    <footer th:replace="layout :: footer"></footer>
+</div>
+</body>
+</html>

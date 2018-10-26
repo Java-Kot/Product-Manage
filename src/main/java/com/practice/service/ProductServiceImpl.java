@@ -37,7 +37,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findByName(String prodname) {
-        return productMap.get(prodname);
+        for(Product value : productMap.values()){
+            if(value.getProdname().equals(prodname)){
+                return value;
+            }
+        }
+        return null;
     }
 
     @Override

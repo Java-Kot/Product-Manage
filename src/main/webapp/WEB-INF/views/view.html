@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div class="container">
+    <header th:replace="layout :: header"></header>
+    <style>
+        .formview{
+            width: 39%;
+            margin: 3em auto;
+            border: 1px solid #fefefe;
+            border-radius: 5px;
+            padding: 2em;
+        }
+        label{
+            color: #FFFFFF;
+            margin-top: .3em;
+        }
+        button{
+            margin: 1em;
+        }
+    </style>
+    <section class="banner" role="banner">
+        <div class="">
+            <h1>View product</h1>
+            <ul th:each="row,statRow : ${item}">
+                <li th:text="${item.prodname}"></li>
+                <li th:text="${item.price}"></li>
+                <li th:text="${item.description}"></li>
+                <li th:text="${item.vendorx}"></li>
+            </ul>
+        </div>
+    </section>
+    <footer th:replace="layout :: footer"></footer>
+</div>
+</body>
+</html>

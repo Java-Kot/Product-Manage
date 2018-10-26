@@ -2,16 +2,88 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: head"></head>
 <body>
-<topbody th:replace="layout :: topbody"></topbody>
-<ul th:each="row,rowStat : ${products}">
-    <li>
-        <p th:text="${row.getId()}"></p>
-        <p th:text="${row.getProdname()}"></p>
-        <p th:text="${row.getPrice()}"></p>
-        <p th:text="${row.getDescription()}"></p>
-        <p th:text="${row.getVendorx()}"></p>
-    </li>
-</ul>
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<div class="container">
+<header th:replace="layout :: header"></header>
+    <style>
+        .prodshow{
+            list-style: none;
+            width: 80%;
+            color: #FFF;
+            margin: 6em auto;
+        }
+        .prodshow > li{
+            border-bottom: 1px solid;
+            border-color: #fefefe;
+            float: left;
+            display: block;
+            width: 100%;
+            position: relative;
+        }
+        .prodshow > li:last-child{border-bottom: 0;}
+        .prodshow > li:first-child{text-align: center;}
+        .prodshow > li > .edit, .prodshow > li > .delete{
+            float: right;
+            padding: 5px;
+            position: absolute;
+            right: 50px;
+            top: 3px;
+            color: #999999;
+            font-size: 18px;
+            transition: color 0.3s ease-out;
+        }
+        .prodshow > li > .delete{
+            right: 20px;
+        }
+        .prodshow > li > .edit:hover, .prodshow > li > .delete:hover{
+            color: #FFFFFF;
+        }
+        ul > li > p{
+            width: 20%;
+            float: left;
+            padding: .5em 1em;
+            margin: .3em 0;
+            border-left: 1px solid;
+            border-color: #fefefe;
+        }
+        ul > li > p > a{color: #FFFFFF}
+        ul > li > p > a:hover{color: #999999;text-decoration: none}
+        ul > li > p:first-child{border-left: 0}
+        .id{
+            width: 10%;
+            text-align: center
+        }
+        .prodname{width: 30%}
+    </style>
+    <section class="banner" role="banner">
+        <ul class="prodshow">
+            <li>
+                <p class="id">ID</p>
+                <p class="prodname">NAME PRODUCT</p>
+                <p>PRICE</p>
+                <p>DESCRIPTION</p>
+                <p>MANUFACTURE</p>
+            </li>
+            <li th:each="row,rowStat : ${products}">
+                <p class="id" th:text="${row.getId()}"></p>
+                <p class="prodname"><a th:text="${row.getProdname()}" th:href="@{/{id}/view(id=${row.getId()})}"></a></p>
+                <p th:text="${row.getPrice()}"></p>
+                <p th:text="${row.getDescription()}"></p>
+                <p th:text="${row.getVendorx()}"></p>
+                <a class="edit" title="Edit" th:href="@{/{id}/edit(id=${row.getId()})}">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a class="delete" title="Delete" th:href="@{/{id}/delete(id=${row.getId()})}">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </li>
+        </ul>
+    </section>
 <footer th:replace="layout :: footer"></footer>
+</div>
 </body>
 </html>

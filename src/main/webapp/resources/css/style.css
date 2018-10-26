@@ -1,13 +1,15 @@
-color: #878787;
-font-family: Roboto, sans-serif;
-left: 0;
-line-height: 1.35;
-margin: 0;
-overflow: hidden;
-position: relative;
-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
-transition: left 0.3s ease-in-out;
+body {
+    color: #878787;
+    font-family: Roboto, sans-serif;
+    left: 0;
+    line-height: 1.35;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background: #fd5480;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    transition: left 0.3s ease-in-out;
 }
 body.panel-open {
     left: -250px;
@@ -31,7 +33,7 @@ header {
     color: #fff;
     padding: 3em 5%;
     position: relative;
-    width: 90%;
+    width: 100%;
     z-index: 2;
 }
 
@@ -148,13 +150,14 @@ header {
 
 .banner {
     background: #f5756c;
-    background: linear-gradient(#f5756c, #fd5480), #f5756c;
+    /*background: linear-gradient(#f5756c, #fd5480), #f5756c;*/
     box-sizing: border-box;
+    background: linear-gradient(rgba(30, 23, 0, 0.3), #483324), rgba(32, 32, 39, 0.34);
     height: 100%;
     left: 0;
     padding: 5em 0;
     position: absolute;
-    text-align: center;
+    /*text-align: center;*/
     top: 0;
     width: 100%;
     z-index: 1;
