@@ -185,3 +185,121 @@ header {
 .container:after, header:after, .menu-toggle:after {
     clear: both;
 }
+.formview{
+    width: 39%;
+    margin: 3em auto;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 2em;
+}
+label{
+    color: #FFFFFF;
+    margin-top: .3em;
+}
+button{
+    margin: 1em;
+}
+.formview{
+    width: 39%;
+    margin: 3em auto;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 2em;
+}
+label{
+    color: #FFFFFF;
+    margin-top: .3em;
+}
+button{
+    margin: 1em;
+}
+.formview{
+    width: 39%;
+    margin: 3em auto;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 2em;
+}
+label{
+    color: #FFFFFF;
+    margin-top: .3em;
+}
+button{
+    margin: 1em;
+}
+.prodshow{
+    list-style: none;
+    width: 80%;
+    color: #FFF;
+    margin: 6em auto;
+}
+.prodshow > li{
+    border-bottom: 1px solid;
+    border-color: #fefefe;
+    float: left;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.prodshow > li:last-child{border-bottom: 0;}
+.prodshow > li:first-child{text-align: center;}
+.prodshow > li > .edit, .prodshow > li > .delete{
+    float: right;
+    padding: 5px;
+    position: absolute;
+    right: 50px;
+    top: 3px;
+    color: #999999;
+    font-size: 18px;
+    transition: color 0.3s ease-out;
+}
+.prodshow > li > .delete{
+    right: 20px;
+}
+.prodshow > li > .edit:hover, .prodshow > li > .delete:hover{
+    color: #FFFFFF;
+}
+ul > li > p{
+    width: 20%;
+    float: left;
+    padding: .5em 1em;
+    margin: .3em 0;
+    border-left: 1px solid;
+    border-color: #fefefe;
+}
+ul > li > p > a{color: #FFFFFF}
+ul > li > p > a:hover{color: #999999;text-decoration: none}
+ul > li > p:first-child{border-left: 0}
+.id{
+    width: 10%;
+    text-align: center
+}
+.prodname{width: 30%}
+.formview{
+    width: 39%;
+    margin: 3em auto;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 2em;
+}
+label{
+    color: #FFFFFF;
+    margin-top: .3em;
+}
+button{
+    margin: 1em;
+}
+.formview{
+    width: 39%;
+    margin: 3em auto;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+    padding: 2em;
+}
+label{
+    color: #FFFFFF;
+    margin-top: .3em;
+}
+button{
+    margin: 1em;
+}
